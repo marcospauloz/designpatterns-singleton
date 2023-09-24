@@ -1,7 +1,5 @@
 ﻿using Factory;
 
-Console.WriteLine("Hello, World!");
-
 var factories = new List<DiscountFactory>
 {
     new CodeDiscountFactory(Guid.NewGuid()),

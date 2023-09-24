@@ -1,7 +1,5 @@
 ﻿using Singleton;
 
-Console.WriteLine("Hello, World!");
-
 var instance1 = Logger.Instance;
 var instance2 = Logger.Instance;
 
