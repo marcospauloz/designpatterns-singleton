@@ -1,23 +1,33 @@
-# Creational Pattern: Abstract Factory Method
+# Creational Pattern: Builder Method
 
 ## Introduction
-The intent of the abstract factory pattern is to provide an interface for creating families of related or dependent objects without specifying their concrete classes
+The intent of the builder pattern is to separate the construction of a complex object from its representation.
+By doing so, the same construction process can create different representations.
 
-## Use cases for the Abstract Factory
-- When a system should be independent of how its products are created, composed and represented
-- When you want to provide a class library of things and you only want to reveal their interfaces, not their implementations
-- When a system should be configured with one of multiple families of things
-- When a family of related things objects is designed to be used together and you want to enforce this constraint
+## Use cases for the Builder Method
+Builder specifies an abstract interface for creating parts of a Car object
+
+Concrete builder constructs and assemble parts of the Car by implementing the Builder interface.
+It keeps track of the representation it creates, and provides an interface for retrieving the Car.
+
+When you want to make the algorithm for creating a complex object independent of the parts that
+make up the object and how they're assembled.
+
+Whe you want to construction process to allow different representation for the object that's constructed
 
 ## Pattern Consequences
-_ It isolates concrete classes, because it encapsulates the responsability and the process of creating objects
-- New objects can easily be introduced without braking client code: open/closed principle
-- Code to create object it contained in one place: single responsibility principle
-- It makes exchanging objects families easy
-- It promotes consistency among objects
-- Supporting new kinds of products is rather difficult
+It lets us vary a Car internal representation
+
+It isolates code for construction and representation;
+it thus improves modularity by encapsulating the way a complex object is constructed and represented: Single Responsibility Principle
+
+It give us finer control over the construction process
+
+Complexity of you code base increases
 
 ## Related Patterns
-- Factory method: Abstract factory can be implemented using factory methods
-- Prodotype: Abstract factory can be implemented using prototypes
-- Singleton: A concrete factory is often implemented as a singleton
+Abstract factory: Both can be used to construct complex objects, but the builder constructs the complex objects step by step
+
+Singleton: A builder can be implemented as a singleton
+
+Composite: Composites are often built by builders
